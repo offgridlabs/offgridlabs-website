@@ -275,10 +275,11 @@ footer a {
 }
 
 /* =====================================================
-   PHONES (≤768px) — IMPORTANT FIX
+   PHONES (≤768px) — FINAL HOME FIX
 ===================================================== */
 
 @media (max-width: 768px) {
+
   header {
     flex-direction: column;
     align-items: center;
@@ -301,10 +302,23 @@ footer a {
     padding: 4rem 1.5rem;
   }
 
+  /* REMOVE DESKTOP WIDTH CONSTRAINTS */
+  .hero,
+  .hero-content {
+    max-width: 100%;
+    width: 100%;
+  }
+
   /* FORCE HERO STACK */
   .hero-split {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .hero h1,
+  .hero p {
+    max-width: 100%;
   }
 
   .hero h1 {
@@ -324,6 +338,10 @@ footer a {
     width: 100%;
     max-width: 100%;
     margin-top: 2.5rem;
+  }
+
+  .divider {
+    margin: 0 1.5rem;
   }
 
   .cards {
