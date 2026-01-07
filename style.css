@@ -12,11 +12,18 @@
   --border: #e1e5eb;
 }
 
-/* RESET */
+/* ================= RESET ================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 body {
@@ -26,7 +33,8 @@ body {
   line-height: 1.65;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header {
   padding: 1.6rem 5rem;
   display: flex;
@@ -39,6 +47,11 @@ header {
   z-index: 10;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
   margin-left: 2rem;
   font-weight: 500;
@@ -49,14 +62,17 @@ nav a:hover {
   color: var(--primary-dark);
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
+
 section {
   padding: 5.5rem 4rem;
+  overflow-x: hidden;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero {
-  max-width: 920px;
+  max-width: 1100px;
 }
 
 .hero h1 {
@@ -72,7 +88,8 @@ section {
   margin-bottom: 2rem;
 }
 
-/* CTA */
+/* ================= CTA ================= */
+
 .cta {
   background: var(--primary);
   color: #fff;
@@ -82,7 +99,7 @@ section {
   display: inline-block;
 }
 
-/* ================= HERO SPLIT LAYOUT ================= */
+/* ================= HERO SPLIT ================= */
 
 .hero-split {
   display: grid;
@@ -95,13 +112,11 @@ section {
   max-width: 620px;
 }
 
-/* Image wrapper keeps editorial feel */
 .hero-image-wrapper {
   display: flex;
   justify-content: center;
 }
 
-/* Image styling based on 2048x1367 ratio */
 .hero-image {
   width: 100%;
   max-width: 420px;
@@ -111,25 +126,11 @@ section {
   filter: saturate(0.92) contrast(0.95);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= HERO META ================= */
 
-@media (max-width: 900px) {
-  .hero-split {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-image {
-    max-width: 100%;
-    margin-top: 3rem;
-  }
-}
-
-
-
-/* 🔹 HERO META (DESIGN ELEMENT THAT FIXES EMPTINESS) */
 .hero-meta {
   display: flex;
-  gap: 2.8rem;
+  gap: 2.5rem;
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border);
@@ -153,13 +154,15 @@ section {
   color: var(--muted);
 }
 
-/* DIVIDER */
+/* ================= DIVIDER ================= */
+
 .divider {
   border-top: 1px solid var(--border);
   margin: 0 4rem;
 }
 
-/* CARDS */
+/* ================= CARDS ================= */
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -178,13 +181,15 @@ section {
   margin-bottom: 0.6rem;
 }
 
-/* LISTS */
+/* ================= LISTS ================= */
+
 .blog-list li {
   margin-bottom: 1.2rem;
   font-size: 1.05rem;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer {
   padding: 4rem;
   background: var(--bg-soft);
@@ -195,46 +200,14 @@ footer a {
   color: var(--primary-dark);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  section {
-    padding: 4rem 1.5rem;
-  }
-
-  .hero-meta {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-
 /* =====================================================
-   GLOBAL RESPONSIVE SAFETY
-===================================================== */
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-section {
-  overflow-x: hidden;
-}
-
-/* =====================================================
-   LARGE SCREENS (1440px+)
+   LARGE SCREENS (≥1440px)
 ===================================================== */
 
 @media (min-width: 1440px) {
   section {
     max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 
   header {
@@ -248,12 +221,12 @@ section {
 ===================================================== */
 
 @media (max-width: 1280px) {
-  section {
-    padding: 5rem 3rem;
-  }
-
   header {
     padding: 1.4rem 3rem;
+  }
+
+  section {
+    padding: 5rem 3rem;
   }
 
   .hero-image {
@@ -302,7 +275,7 @@ section {
 }
 
 /* =====================================================
-   PHONES (≤768px)
+   PHONES (≤768px) — IMPORTANT FIX
 ===================================================== */
 
 @media (max-width: 768px) {
@@ -328,6 +301,12 @@ section {
     padding: 4rem 1.5rem;
   }
 
+  /* FORCE HERO STACK */
+  .hero-split {
+    display: flex;
+    flex-direction: column;
+  }
+
   .hero h1 {
     font-size: clamp(2.2rem, 6vw, 2.8rem);
   }
@@ -339,6 +318,12 @@ section {
   .hero-meta {
     flex-direction: column;
     gap: 1.4rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2.5rem;
   }
 
   .cards {
@@ -361,12 +346,7 @@ section {
 
   .cta {
     width: 100%;
-    justify-content: center;
-    padding: 0.9rem;
-  }
-
-  .hero-image {
-    border-radius: 0.8rem;
+    text-align: center;
   }
 
   .card {
@@ -377,4 +357,3 @@ section {
     font-size: 0.9rem;
   }
 }
-
