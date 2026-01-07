@@ -211,3 +211,170 @@ footer a {
     gap: 1.5rem;
   }
 }
+
+/* =====================================================
+   GLOBAL RESPONSIVE SAFETY
+===================================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   LARGE SCREENS (1440px+)
+===================================================== */
+
+@media (min-width: 1440px) {
+  section {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+/* =====================================================
+   LAPTOPS (≤1280px)
+===================================================== */
+
+@media (max-width: 1280px) {
+  section {
+    padding: 5rem 3rem;
+  }
+
+  header {
+    padding: 1.4rem 3rem;
+  }
+
+  .hero-image {
+    max-width: 380px;
+  }
+}
+
+/* =====================================================
+   TABLETS (≤1024px)
+===================================================== */
+
+@media (max-width: 1024px) {
+  header {
+    padding: 1.2rem 2.5rem;
+  }
+
+  nav a {
+    margin-left: 1.5rem;
+  }
+
+  section {
+    padding: 4.5rem 2.5rem;
+  }
+
+  .hero-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PHONES (≤768px)
+===================================================== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw, 2.8rem);
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* =====================================================
+   SMALL PHONES (≤480px)
+===================================================== */
+
+@media (max-width: 480px) {
+  header h2 {
+    font-size: 1.4rem;
+  }
+
+  .cta {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem;
+  }
+
+  .hero-image {
+    border-radius: 0.8rem;
+  }
+
+  .card {
+    padding: 1.6rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
