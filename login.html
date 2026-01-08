@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ CRITICAL MOBILE FIX -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
   <title>Sign In | OffGridLabs</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css?v=2026">
+
+  <!-- ✅ LOGIN-ONLY MOBILE SAFETY -->
+  <style>
+    /* Prevent mobile zoom + desktop layout bug */
+    .auth-form input,
+    .auth-btn {
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
   <h2>OffGridLabs</h2>
   <nav>
@@ -25,6 +41,7 @@
   </nav>
 </header>
 
+<!-- ================= LOGIN SECTION ================= -->
 <section class="auth-section">
   <div class="auth-card">
 
@@ -55,6 +72,7 @@
       </button>
     </form>
 
+    <!-- COMING SOON MESSAGE -->
     <p class="coming-soon-message" id="loginMessage">
       Community access is coming soon. We’re building this carefully.
     </p>
@@ -67,6 +85,8 @@
   </div>
 </section>
 
+<!-- JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
