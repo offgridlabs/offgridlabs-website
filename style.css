@@ -1,3 +1,5 @@
+/* ================= ROOT VARIABLES ================= */
+
 :root {
   --bg: #fafafa;
   --bg-soft: #f4f4f4;
@@ -24,6 +26,10 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
@@ -97,6 +103,11 @@ section {
   border-radius: 6rem;
   font-weight: 600;
   display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--primary-dark);
 }
 
 /* ================= HERO SPLIT ================= */
@@ -190,195 +201,6 @@ section {
 
 /* ================= FOOTER ================= */
 
-footer {
-  padding: 4rem;
-  background: var(--bg-soft);
-  border-top: 1px solid var(--border);
-}
-
-footer a {
-  color: var(--primary-dark);
-}
-
-/* =====================================================
-   LARGE SCREENS (≥1440px)
-===================================================== */
-
-@media (min-width: 1440px) {
-  section {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-
-  header {
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
-}
-
-/* =====================================================
-   LAPTOPS (≤1280px)
-===================================================== */
-
-@media (max-width: 1280px) {
-  header {
-    padding: 1.4rem 3rem;
-  }
-
-  section {
-    padding: 5rem 3rem;
-  }
-
-  .hero-image {
-    max-width: 380px;
-  }
-}
-
-/* =====================================================
-   TABLETS (≤1024px)
-===================================================== */
-
-@media (max-width: 1024px) {
-  header {
-    padding: 1.2rem 2.5rem;
-  }
-
-  nav a {
-    margin-left: 1.5rem;
-  }
-
-  section {
-    padding: 4.5rem 2.5rem;
-  }
-
-  .hero-split {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .hero-image {
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  footer .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =====================================================
-   PHONES (≤768px) — FINAL HOME FIX
-===================================================== */
-
-@media (max-width: 768px) {
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    text-align: center;
-  }
-
-  nav {
-    display: flex;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    margin: 0;
-  }
-
-  section {
-    padding: 4rem 1.5rem;
-  }
-
-  /* REMOVE DESKTOP WIDTH CONSTRAINTS */
-  .hero,
-  .hero-content {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  /* FORCE HERO STACK */
-  .hero-split {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero h1,
-  .hero p {
-    max-width: 100%;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.2rem, 6vw, 2.8rem);
-  }
-
-  .hero p {
-    font-size: 1.05rem;
-  }
-
-  .hero-meta {
-    flex-direction: column;
-    gap: 1.4rem;
-  }
-
-  .hero-image {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 2.5rem;
-  }
-
-  .divider {
-    margin: 0 1.5rem;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  footer {
-    padding: 3rem 1.5rem;
-  }
-}
-
-/* =====================================================
-   SMALL PHONES (≤480px)
-===================================================== */
-
-@media (max-width: 480px) {
-  header h2 {
-    font-size: 1.4rem;
-  }
-
-  .cta {
-    width: 100%;
-    text-align: center;
-  }
-
-  .card {
-    padding: 1.6rem;
-  }
-
-  footer p {
-    font-size: 0.9rem;
-  }
-}
-
-
-/* ================= CENTERED BLENDED FOOTER ================= */
-
 .site-footer {
   background: var(--bg-soft);
   border-top: 1px solid var(--border);
@@ -396,7 +218,6 @@ footer a {
   justify-items: center;
 }
 
-/* Brand block */
 .footer-brand h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
@@ -410,7 +231,6 @@ footer a {
   line-height: 1.6;
 }
 
-/* Links section */
 .footer-links {
   display: grid;
   grid-template-columns: repeat(3, minmax(140px, 1fr));
@@ -439,25 +259,130 @@ footer a {
   color: var(--primary-dark);
 }
 
-/* Bottom line */
 .footer-bottom {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
   font-size: 0.85rem;
+}
+
+/* ================= AUTH PAGES ================= */
+
+.auth-section {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
+.auth-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.4rem;
+  padding: 3rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.auth-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.auth-subtitle {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 2.2rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.auth-form input {
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.auth-btn {
+  margin-top: 1rem;
+}
+
+.auth-footer {
+  margin-top: 1.8rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
-/* ================= FOOTER RESPONSIVE ================= */
+.auth-footer a {
+  color: var(--primary-dark);
+  font-weight: 500;
+}
 
-@media (max-width: 768px) {
-  .footer-links {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  section {
+    padding: 4.5rem 2.5rem;
   }
 
-  .footer-brand p {
-    max-width: 100%;
+  .hero-split {
+    grid-template-columns: 1fr;
   }
 }
 
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+}
+
+/* ================= COMING SOON MESSAGE ================= */
+
+.coming-soon-message {
+  display: none;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+}
