@@ -386,3 +386,32 @@ section {
   padding: 0.9rem 1rem;
   border-radius: 0.75rem;
 }
+
+/* ================= MOBILE FORM HARDENING ================= */
+
+/* Prevent iOS zoom on input focus */
+.auth-form input,
+.auth-form button {
+  font-size: 16px;
+}
+
+/* Better tap targets */
+.auth-btn {
+  min-height: 48px;
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 2.2rem 1.6rem;
+  }
+
+  .auth-card h1 {
+    font-size: 1.7rem;
+  }
+
+  .auth-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
