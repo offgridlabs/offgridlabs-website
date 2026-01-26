@@ -81,7 +81,7 @@ nav a:hover {
 /* ================= SECTIONS ================= */
 
 section {
-  padding: 5rem clamp(1.25rem, 4vw, 4rem);
+  padding: 4.5rem clamp(1.25rem, 4vw, 4rem);
 }
 
 /* ================= HERO ================= */
